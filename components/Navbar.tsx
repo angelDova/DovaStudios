@@ -318,7 +318,7 @@ const Navbar = () => {
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                 <a
-                  href="https://www.linkedin.com/in/clint-briley-50056920a/"
+                  href="https://www.instagram.com/angeldova_/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -327,7 +327,7 @@ const Navbar = () => {
                   </div>
                 </a>
                 <a
-                  href="https://github.com/fireclint"
+                  href="https://www.linkedin.com/in/angeldova/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -335,7 +335,7 @@ const Navbar = () => {
                     <FiLinkedin />
                   </div>
                 </a>
-                <Link href="/#contact">
+                <Link href="/contact">
                   <div
                     onClick={() => setNav(!nav)}
                     className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
@@ -343,7 +343,7 @@ const Navbar = () => {
                     <AiOutlineMail />
                   </div>
                 </Link>
-                <Link href="/resume">
+                <Link href="https://www.pinterest.com/">
                   <div
                     onClick={() => setNav(!nav)}
                     className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"

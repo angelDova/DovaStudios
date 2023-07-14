@@ -9,7 +9,7 @@ import Msi from "@/public/MSI-laptop.jpeg";
 
 const Projects = () => {
   return (
-    <div id="projects" className="w-full">
+    <div id="portfolio" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-32">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projects

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -6,6 +8,12 @@ import { FaPinterestP } from "react-icons/fa";
 import { FiInstagram, FiLinkedin } from "react-icons/fi";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "@/public/Iphone14Pro-1.jpg";
+import AboutImg from "@/public/AboutImg.jpg";
+import { Button } from "@/components/ui/button";
+
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
 
 const Contact = () => {
   return (
@@ -22,12 +30,12 @@ const Contact = () => {
               <div>
                 <Image
                   className="rounded-xl hover:scale-105 ease-in duration-300"
-                  src={ContactImg}
+                  src={AboutImg}
                   alt="/"
                 />
               </div>
               <div>
-                <h2 className="py-2">Ariana Cordova</h2>
+                <h2 className="py-6">Ariana Cordova</h2>
                 <p>Creative Director | Stylist | Set Designer</p>
                 <p className="py-4">
                   I am available for freelance or full-time positions. Contact
@@ -38,7 +46,7 @@ const Contact = () => {
                 <p className="uppercase pt-8">Connect With Me</p>
                 <div className="flex items-center justify-between py-4">
                   <a
-                    href="https://www.linkedin.com/in/clint-briley-50056920a/"
+                    href="https://www.instagram.com/angeldova_/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -47,7 +55,7 @@ const Contact = () => {
                     </div>
                   </a>
                   <a
-                    href="https://github.com/fireclint"
+                    href="https://www.linkedin.com/in/angeldova/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -59,11 +67,15 @@ const Contact = () => {
                   <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiOutlineMail />
                   </div>
-                  <Link href="/resume">
+                  <a
+                    href="https://www.pinterest.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaPinterestP />
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -115,25 +127,31 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
-                  {/* <textarea
+                  <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
-                    rows="10"
+                    rows={10}
                     name="message"
-                  ></textarea> */}
+                  ></textarea>
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="p-4 text-black mt-4 w-full"
+                >
                   Send Message
-                </button>
+                </Button>
               </form>
             </div>
           </div>
         </div>
         <div className="flex justify-center py-12">
-          <Link href="/">
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
-            </div>
-          </Link>
+          <Button
+            variant="ghost"
+            onClick={scrollToTop}
+            className="scrollTop rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+          >
+            <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
+          </Button>
         </div>
       </div>
     </div>
