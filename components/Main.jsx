@@ -8,7 +8,7 @@ const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div className="">
           <p className="uppercase text-sm tracking-widest text-gray-600">
-            Let&apos;s create something legendary together
+            Let&apos;s create something together
           </p>
           <h1 className="py-4 text-gray-700">
             Hi, I&apos;m <span className="text-purple-700">Ariana</span>{" "}
