@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/dovastudios.png";
 import Navbar from "@/components/Navbar";
+import GlobalStyles from "@/styles/GlobalStyles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,9 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="mx-auto py-10 bg-[#FFF8ED]">
+      <body>
+        <GlobalStyles />
         <Navbar />
-
         {children}
       </body>
     </html>
