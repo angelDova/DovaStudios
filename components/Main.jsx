@@ -49,7 +49,7 @@ const Main = () => {
     <div className="relative min-h-[200vh] overflow-hidden">
       <CoverVideo />
       <h1>Logo</h1>
-      <h1>Navbar</h1>
+      <h1>NavbarLogo</h1>
     </div>
   );
 };
