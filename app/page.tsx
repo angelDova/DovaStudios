@@ -1,113 +1,225 @@
-import Image from 'next/image'
+"use client";
 
-export default function Home() {
+import { useScroll, useTransform, motion } from "framer-motion";
+import {
+  AiFillApple,
+  AiFillFileImage,
+  AiOutlineInstagram,
+} from "react-icons/ai";
+import { BsTiktok } from "react-icons/bs";
+import { FcCamera } from "react-icons/fc";
+import { useRef } from "react";
+
+import LiquidSideNav from "@/components/LiquidSideNav";
+
+const ImageGridHero = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Nav scrollYProgress={scrollYProgress} />
+      <section ref={targetRef} className="bg-white h-[350vh]">
+        <div className="h-screen sticky top-0 z-0 grid grid-cols-3 grid-rows-3 gap-4 p-4 overflow-hidden">
+          <Copy scrollYProgress={scrollYProgress} />
+          <Images scrollYProgress={scrollYProgress} />
+
+          <Circles />
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <LiquidSideNav />
+      {/* <div className="h-screen text-white flex items-center justify-center"></div> */}
+    </>
+  );
+};
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+interface NavProps {
+  scrollYProgress: any;
 }
+
+const Nav: React.FC<NavProps> = ({ scrollYProgress }) => {
+  const background = useTransform(scrollYProgress, (i) =>
+    i === 1 ? "rgb(13,10,9)" : "transparent"
+  );
+
+  return (
+    <motion.nav
+      style={{ background }}
+      className="px-4 py-2 flex items-center justify-between fixed top-0 left-0 right-0 z-40 transition-colors"
+    >
+      <div className="flex items-center gap-2 text-lg text-white">
+        <FcCamera className="text-xl" />
+        <span className="font-bold">DOVASTUDIOS</span>
+      </div>
+      <button className=" text-sm bg-white text-black hover:opacity-90 transition-opacity font-semibold flex items-center gap-1.5 px-3 py-1.5">
+        <a
+          className="flex"
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AiOutlineInstagram className="text-lg" />
+          <span>&nbsp;Instagram</span>
+        </a>
+      </button>
+      <button className="text-sm bg-white text-black hover:opacity-90 transition-opacity font-semibold flex items-center gap-1.5 px-3 py-1.5">
+        <a
+          className="flex"
+          href="https://www.tiktok.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BsTiktok className="text-lg" />
+          <span>&nbsp;TikTok</span>
+        </a>
+      </button>
+    </motion.nav>
+  );
+};
+
+interface CopyProps {
+  scrollYProgress: any;
+}
+
+const Copy: React.FC<CopyProps> = ({ scrollYProgress }) => {
+  const copyScale = useTransform(scrollYProgress, [0, 0.75], [1, 0.5]);
+  const copyOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const copyY = useTransform(scrollYProgress, [0, 0.75], ["0%", "7.5%"]);
+
+  return (
+    <motion.div
+      style={{
+        scale: copyScale,
+        opacity: copyOpacity,
+        y: copyY,
+      }}
+      className="absolute px-8 w-full h-screen z-20 flex flex-col items-center justify-center"
+    >
+      <h1 className="text-stone-950 text-5xl md:text-7xl font-bold text-center max-w-xl">
+        Dova Studios
+      </h1>
+      <p className="text-stone-600 text-sm md:text-base text-center max-w-xl my-6">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, minus
+        nisi? Quod praesentium quaerat possimus.
+      </p>
+      <div className="flex items-center gap-4">
+        <button className="px-4 py-2 bg-violet-600 hover:bg-violet-600 transition-colors text-white font-medium rounded-full">
+          Portfolio
+        </button>
+        <button className="px-4 py-2 bg-transparent hover:bg-stone-200 transition-colors text-stone-950 font-medium rounded-full">
+          Contact Me
+        </button>
+      </div>
+    </motion.div>
+  );
+};
+
+interface ImagesProps {
+  scrollYProgress: any;
+}
+
+const Images: React.FC<ImagesProps> = ({ scrollYProgress }) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
+  const image1Offset = useTransform(scrollYProgress, [0, 1], ["-35%", "0%"]);
+
+  const image2OffsetX = useTransform(scrollYProgress, [0, 1], ["30%", "0%"]);
+  const image2OffsetY = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
+
+  const image3OffsetX = useTransform(scrollYProgress, [0, 1], ["-25%", "0%"]);
+  const image3OffsetY = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
+
+  const image4OffsetX = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
+  const image4OffsetY = useTransform(scrollYProgress, [0, 1], ["-145%", "0%"]);
+
+  const image5OffsetX = useTransform(scrollYProgress, [0, 1], ["-25%", "0%"]);
+  const image5OffsetY = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
+
+  const image6OffsetX = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
+  const image6OffsetY = useTransform(scrollYProgress, [0, 1], ["25%", "0%"]);
+
+  return (
+    <>
+      <motion.div
+        className="col-span-2 relative z-10"
+        style={{
+          backgroundImage: "url(../images/2.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          scale,
+          x: image1Offset,
+          y: image1Offset,
+        }}
+      />
+      <motion.div
+        className="row-span-2 relative z-10"
+        style={{
+          backgroundImage: "url(../images/5.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          scale,
+          x: image2OffsetX,
+          y: image2OffsetY,
+        }}
+      />
+
+      <motion.div
+        className="row-span-2 relative z-10"
+        style={{
+          backgroundImage: "url(../images/3.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          scale,
+          x: image3OffsetX,
+          y: image3OffsetY,
+        }}
+      />
+      <motion.div
+        className="relative z-10"
+        style={{
+          backgroundImage: "url(../images/4.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          scale,
+          x: image4OffsetX,
+          y: image4OffsetY,
+        }}
+      />
+
+      <motion.div
+        className="relative z-10"
+        style={{
+          backgroundImage: "url(../images/1.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          scale,
+          x: image5OffsetX,
+          y: image5OffsetY,
+        }}
+      />
+      <motion.div
+        className="relative z-10"
+        style={{
+          backgroundImage: "url(../images/AboutImg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          scale,
+          x: image6OffsetX,
+          y: image6OffsetY,
+        }}
+      />
+    </>
+  );
+};
+
+const Circles = () => (
+  <>
+    <div className="w-3/5 max-w-[850px] min-w-[400px] aspect-square border-[8px] border-slate-200 rounded-full absolute z-0 left-0 top-0 -translate-x-[50%] -translate-y-[50%]" />
+    <div className="w-1/2 max-w-[600px] min-w-[300px] aspect-square border-[8px] border-slate-200 rounded-full absolute z-0 right-0 bottom-0 translate-x-[50%] translate-y-[50%]" />
+  </>
+);
+
+export default ImageGridHero;
