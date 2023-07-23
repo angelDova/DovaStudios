@@ -99,7 +99,7 @@ const Copy: React.FC<CopyProps> = ({ scrollYProgress }) => {
       className="absolute px-8 w-full h-screen z-20 flex flex-col items-center justify-center"
     >
       <h1 className="text-stone-950 text-5xl md:text-7xl font-bold text-center max-w-xl">
-        Dova Studios
+        Dova
       </h1>
       <p className="text-stone-600 text-sm md:text-base text-center max-w-xl my-6">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, minus
