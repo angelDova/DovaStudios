@@ -1,17 +1,26 @@
+"use client";
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import ImageDetail from "../components/Image-Detail";
+import Modal from "../components/Modal";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
-
 export default function ModernCarousel() {
   const [idx, setIdx] = useState(0);
   const [prevIdx, setPrevIdx] = useState(idx);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+
+  const searchParams = useSearchParams();
 
   const trend = idx > prevIdx ? 1 : -1;
 
   const imageIndex = Math.abs(idx % images.length);
 
   return (
-    <div className="h-[50vw] min-h-[400px] max-h-[600px] bg-black relative overflow-hidden">
+    <div className="h-[50vw] min-h-[400px] max-h-[600px] bg-black relative overflow-hidden rounded-lg">
       <button
         onClick={() => {
           setPrevIdx(idx);
@@ -38,6 +47,7 @@ export default function ModernCarousel() {
           />
         </AnimatePresence>
       </div>
+
       <button
         onClick={() => {
           setPrevIdx(idx);
@@ -49,6 +59,16 @@ export default function ModernCarousel() {
       </button>
 
       <AnimatePresence initial={false} custom={trend}>
+        {/* {router.query.image && (
+          <Modal
+            onClose={() => {
+              router.push("/");
+            }}
+          >
+            <ImageDetail image={router.query.image} />
+          </Modal>
+        )} */}
+
         <motion.span
           custom={trend}
           variants={titleVariants}

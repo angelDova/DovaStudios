@@ -244,7 +244,7 @@ const ShuffleHero = () => {
   return (
     <>
       <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8">
-        Dova-Studio
+        DovaStudios
       </h1>
       <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 max-w-6xl mx-auto">
         <div>
