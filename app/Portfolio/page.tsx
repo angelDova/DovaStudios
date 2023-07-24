@@ -7,8 +7,11 @@ import React from "react";
 const page = () => {
   return (
     <div className="bg-slate-100 items-center justify-center h-screen">
+      <h1 className="flex items-center justify-center font-bold text-4xl ">
+        Portfolio
+      </h1>
       <ModernCarousel />
-      <LiquidSideNav />
+      {/* <LiquidSideNav /> */}
     </div>
   );
 };
