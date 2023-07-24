@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
 
@@ -16,7 +17,7 @@ const FlipNavWrapper = () => {
 const FlipNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
+    <nav className="bg-black p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
       <NavLeft setIsOpen={setIsOpen} />
       <NavRight />
       <NavMenu isOpen={isOpen} />
@@ -27,13 +28,14 @@ const FlipNav = () => {
 const Logo = () => {
   // Temp logo from https://logoipsum.com/
   return (
+    // <Image src="/images/dova.png" alt="logo" width="80" height="40" />
     <svg
       width="50"
       height="39"
       viewBox="0 0 50 39"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-gray-800"
+      className="fill-white"
     >
       <path
         d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
@@ -57,7 +59,7 @@ const NavLeft: React.FC<NavLeftProps> = ({ setIsOpen }) => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="block lg:hidden text-gray-950 text-2xl"
+        className="block lg:hidden text-white text-2xl"
         onClick={() => setIsOpen((pv: any) => !pv)}
       >
         <FiMenu />

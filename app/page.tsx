@@ -242,32 +242,37 @@ const ShuffleHero = () => {
   };
 
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
-      <div>
-        <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
-          Ariana Cordova
-        </span>
-        <h3 className="text-4xl md:text-6xl font-semibold">
-          Creative Director | Stylist | Set Designer
-        </h3>
-        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis in
-          error repellat voluptatibus ad.
-        </p>
-        {/* <button className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap">
+    <>
+      <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8">
+        Dova-Studio
+      </h1>
+      <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 max-w-6xl mx-auto">
+        <div>
+          <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
+            Ariana Cordova
+          </span>
+          <h3 className="text-4xl md:text-6xl font-semibold">
+            Creative Director | Stylist | Set Designer
+          </h3>
+          <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis
+            in error repellat voluptatibus ad.
+          </p>
+          {/* <button className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap">
           Contact
         </button> */}
 
-        <button
-          onClick={handleButtonClick}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
-        >
-          Contact
-        </button>
-      </div>
-      <ModernCarousel />
-      {/* <ShuffleGrid /> */}
-    </section>
+          <button
+            onClick={handleButtonClick}
+            className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
+          >
+            Contact
+          </button>
+        </div>
+        <ModernCarousel />
+        {/* <ShuffleGrid /> */}
+      </section>
+    </>
   );
 };
 
