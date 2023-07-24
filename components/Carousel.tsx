@@ -107,18 +107,33 @@ const titleVariants = {
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-    title: "A Title",
     id: 1,
+    src: "/images/1.jpg",
+    title: "A Title",
   },
   {
-    src: "https://images.unsplash.com/photo-1637141816287-4a55cfeecda2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-    title: "Another Title",
     id: 2,
+    src: "/images/2.jpg",
+    title: "A Title",
   },
   {
-    src: "https://images.unsplash.com/photo-1633774712811-53b489597e78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-    title: "And Another",
     id: 3,
+    src: "/images/3.jpg",
+    title: "A Title",
+  },
+  {
+    id: 4,
+    src: "/images/4.jpg",
+    title: "A Title",
+  },
+  {
+    id: 5,
+    src: "/images/5.jpg",
+    title: "A Title",
+  },
+  {
+    id: 6,
+    src: "/images/AboutImg.jpg",
+    title: "A Title",
   },
 ];

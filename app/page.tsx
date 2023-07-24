@@ -228,6 +228,7 @@
 
 "use client";
 
+import ModernCarousel from "@/components/Carousel";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
@@ -264,7 +265,8 @@ const ShuffleHero = () => {
           Contact
         </button>
       </div>
-      <ShuffleGrid />
+      <ModernCarousel />
+      {/* <ShuffleGrid /> */}
     </section>
   );
 };
