@@ -274,12 +274,14 @@ const ShuffleHero = () => {
           </button>
         </div>
         <ModernCarousel />
-        <Button onClick={() => setIsOpen(true)}>Hi</Button>
+        {/* <Button onClick={() => setIsOpen(true)}>Hi</Button>
         <Modal
           onClick={() => setIsOpen(true)}
           open={isOpen}
           onClose={() => setIsOpen(false)}
-        ></Modal>
+        >
+          Pictures
+        </Modal> */}
         {/* <Button >Open Modal</Button> */}
         {/* <ShuffleGrid /> */}
       </section>
