@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
+import { Dialog } from "@headlessui/react";
+
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import ImageDetail from "../components/Image-Detail";
-import Modal from "../components/Modal";
+
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 export default function ModernCarousel() {
+  const [isOpen, setIsOpen] = useState(true);
+
   const [idx, setIdx] = useState(0);
   const [prevIdx, setPrevIdx] = useState(idx);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +34,6 @@ export default function ModernCarousel() {
       >
         <FiChevronLeft />
       </button>
-
       <div className="absolute inset-0 z-[5] backdrop-blur-xl">
         <AnimatePresence initial={false} custom={trend}>
           <motion.img

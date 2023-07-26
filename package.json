@@ -46,6 +46,8 @@
 
     "framer-motion": "^10.13.0",
 
+    "lucide-react": "^0.263.1",
+
     "next": "13.4.12",
 
     "postcss": "8.4.27",

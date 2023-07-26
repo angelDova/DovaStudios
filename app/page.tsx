@@ -229,12 +229,16 @@
 "use client";
 
 import ModernCarousel from "@/components/Carousel";
+import { Button } from "@/components/ui/button";
+import Modal from "@/components/ui/modal";
+
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 import { Key, useEffect, useRef, useState } from "react";
 
 const ShuffleHero = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
 
   const handleButtonClick = () => {
@@ -270,6 +274,13 @@ const ShuffleHero = () => {
           </button>
         </div>
         <ModernCarousel />
+        <Button onClick={() => setIsOpen(true)}>Hi</Button>
+        <Modal
+          onClick={() => setIsOpen(true)}
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+        ></Modal>
+        {/* <Button >Open Modal</Button> */}
         {/* <ShuffleGrid /> */}
       </section>
     </>
