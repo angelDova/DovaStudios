@@ -3,15 +3,29 @@
 import ModernCarousel from "@/components/Carousel";
 import LiquidSideNav from "@/components/LiquidSideNav";
 import { Tab } from "@headlessui/react";
-import React from "react";
+import React, { useRef } from "react";
 import Masonry from "react-masonry-css";
 import classNames from "classnames";
+
 import img1 from "@/public/images/1.jpg";
 import img2 from "@/public/images/2.jpg";
 import img3 from "@/public/images/3.jpg";
 import img4 from "@/public/images/4.jpg";
 import img5 from "@/public/images/5.jpg";
+import PortfolioBg from "@/public/images/portfolio-bg.jpg";
 import Image from "next/image";
+
+import type { LightGallery } from "lightgallery/lightgallery";
+import LightGalleryComponent from "lightgallery/react";
+
+// import styles
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+
+// import plugins if you need
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
 // const page = () => {
 //   return (
@@ -41,15 +55,26 @@ const tabs = [
   },
 ];
 
-const images = [];
+const images = [img1, img2, img3, img4, img5];
 
-const page = () => {
+const Page = () => {
+  const lightboxRef = useRef<LightGallery | null>(null);
   return (
-    <div className="h-full bg-[url('/images/portfolio-bg.jpg')] bg-top bg-cover overflow-auto">
-      <header className="fixed z-10 w-full flex items-center justify-center h-[90px] px-6">
+    <div className="h-full overflow-auto">
+      <Image
+        src={PortfolioBg}
+        alt="background-imaget"
+        placeholder="blur"
+        className="fixed left-0 top-0 z-0"
+        priority
+      />
+
+      <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div>
+
+      <header className="fixed z-30 w-full flex items-center justify-center h-[90px] px-6">
         <span className="uppercase text-2xl font-medium">Studio Portfolio</span>
       </header>
-      <main className="pt-[110px]">
+      <main className="relative pt-[110px] z-20">
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
             <Tab.List className="flex items-center gap-12">
@@ -77,17 +102,34 @@ const page = () => {
                   className="flex gap-4 "
                   columnClassName=""
                 >
-                  <Image src={img1} alt="image1" className="my-4" />
-                  <Image src={img2} alt="image1" className="my-4" />
-                  <Image src={img3} alt="image1" className="my-4" />
-                  <Image src={img4} alt="image1" className="my-4" />
-                  <Image src={img5} alt="image1" className="my-4" />
-                  {/* <img src="/images/1.jpg" alt="img-1" className="my-4" />
-                  <img src="/images/2.jpg" alt="img-2" className="my-4" />
-                  <img src="/images/3.jpg" alt="img-3" className="my-4" />
-                  <img src="/images/4.jpg" alt="img-4" className="my-4" />
-                  <img src="/images/5.jpg" alt="img-5" className="my-4" /> */}
+                  {images.map((image, idx) => (
+                    <Image
+                      key={image.src}
+                      src={image}
+                      alt="image-content"
+                      className="my-4 hover:opacity-90 cursor-pointer"
+                      placeholder="blur"
+                      onClick={() => {
+                        lightboxRef.current?.openGallery(idx);
+                      }}
+                    />
+                  ))}
                 </Masonry>
+
+                <LightGalleryComponent
+                  onInit={(ref) => {
+                    if (ref) {
+                      lightboxRef.current = ref.instance;
+                    }
+                  }}
+                  speed={500}
+                  plugins={[lgThumbnail, lgZoom]}
+                  dynamic
+                  dynamicEl={images.map((image) => ({
+                    src: image.src,
+                    thumb: image.src,
+                  }))}
+                />
               </Tab.Panel>
               <Tab.Panel>Set Photos</Tab.Panel>
               <Tab.Panel>Style Photos</Tab.Panel>
@@ -96,11 +138,11 @@ const page = () => {
         </div>
       </main>
 
-      <footer className="h-[90px] text-2xl font-medium flex justify-center items-center">
+      <footer className="relative h-[90px] text-2xl font-medium flex justify-center items-center z-20">
         <p className="">Studio Portfolio</p>
       </footer>
     </div>
   );
 };
 
-export default page;
+export default Page;

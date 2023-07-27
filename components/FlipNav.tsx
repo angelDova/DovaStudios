@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 
 const FlipNavWrapper = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white relative">
       <FlipNav />
       {/* <div className="h-72" /> */}
     </div>
@@ -18,7 +18,7 @@ const FlipNavWrapper = () => {
 const FlipNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-black p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
+    <nav className="bg-black p-4 border-b-[1px] border-gray-200 flex items-center justify-between">
       <NavLeft setIsOpen={setIsOpen} />
       <NavRight />
       <NavMenu isOpen={isOpen} />
@@ -84,7 +84,7 @@ const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
     <a
       href={href}
       rel="nofollow"
-      className="hidden lg:block h-[30px] overflow-hidden font-medium"
+      className="hidden lg:block h-[30px] overflow-hidden font-medium relative"
     >
       <motion.div whileHover={{ y: -30 }}>
         <span className="flex items-center h-[30px] text-gray-500">{text}</span>

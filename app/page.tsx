@@ -229,6 +229,7 @@
 "use client";
 
 import ModernCarousel from "@/components/Carousel";
+import FlipNavWrapper from "@/components/FlipNav";
 import { Button } from "@/components/ui/button";
 import Modal from "@/components/ui/modal";
 
