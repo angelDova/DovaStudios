@@ -1,10 +1,10 @@
 import FlipNavWrapper from "@/components/FlipNav";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Permanent_Marker } from "next/font/google";
 import Loading from "./loading";
 
-const inter = Inter({ subsets: ["latin"] });
+const marker = Permanent_Marker({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "DovaStudios",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={marker.className}>
         <FlipNavWrapper />
         {children}
       </body>
