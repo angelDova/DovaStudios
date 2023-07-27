@@ -66,13 +66,11 @@ const Page = () => {
 
   return (
     <div className="h-full float-left w-full relative bg-[#000] overflow-auto sm:px-4">
-      {/* <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div> */}
+      <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div>
 
       <header className="fixed top-0 w-full z-30 flex justify-between items-center h-[90px] px-10 gap-16">
         <LiquidSideNav />
-        <span className="uppercase text-lg font-medium">
-          Photography Portfolio
-        </span>
+        <span className="uppercase text-lg font-medium">Studio Portfolio</span>
       </header>
 
       <main className="relative pt-[110px] z-20">

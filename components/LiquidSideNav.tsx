@@ -6,13 +6,13 @@ const LiquidSideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className=" grid place-content-center  relative">
       <div className="flex items-center text-white">
         <motion.button
           whileHover={{ rotate: "180deg" }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(true)}
-          className="text-3xl bg-white text-black hover:text-indigo-500 transition-colors p-4 rounded-full"
+          className="text-xl bg-white text-black hover:text-indigo-500 transition-colors p-4 rounded-full"
         >
           <FiMenu />
         </motion.button>
@@ -36,7 +36,7 @@ const Nav: React.FC<NavProps> = ({ isOpen, setIsOpen }) => {
       initial="closed"
     >
       <motion.button
-        className="text-3xl bg-white text-black hover:text-indigo-500 border-[1px] border-transparent hover:border-indigo-500 transition-colors p-4 rounded-full absolute top-8 right-8"
+        className="text-2xl bg-white text-black hover:text-indigo-500 border-[1px] border-transparent hover:border-indigo-500 transition-colors p-4 rounded-full absolute top-4 left-4"
         whileHover={{ rotate: "180deg" }}
         onClick={() => setIsOpen(false)}
         whileTap={{ scale: 0.9 }}
