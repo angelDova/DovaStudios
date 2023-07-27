@@ -256,10 +256,10 @@ const ShuffleHero = () => {
           <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
             Ariana Cordova
           </span>
-          <h3 className="text-4xl md:text-6xl font-semibold">
+          <h3 className="text-black text-4xl md:text-6xl font-semibold">
             Creative Director | Stylist | Set Designer
           </h3>
-          <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+          <p className="text-base md:text-lg text-black my-4 md:my-6">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis
             in error repellat voluptatibus ad.
           </p>

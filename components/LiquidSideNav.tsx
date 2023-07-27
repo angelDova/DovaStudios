@@ -6,14 +6,8 @@ const LiquidSideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className="h-screen 
-      bg-violet-600
-     grid place-content-center relative"
-    >
+    <div>
       <div className="flex items-center text-white">
-        <span className="text-sm">Open nav</span>
-        <FiArrowRight className="mr-4 ml-2" />
         <motion.button
           whileHover={{ rotate: "180deg" }}
           whileTap={{ scale: 0.9 }}
@@ -70,7 +64,7 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
   return (
     <motion.a
-      className="inline-block z-10 text-slate-800 w-fit font-black text-7xl hover:text-indigo-500 transition-colors"
+      className="inline-block z-10 text-slate-800 w-fit font-black text-6xl hover:text-indigo-500 transition-colors "
       variants={navLinkVariants}
       transition={{
         type: "spring",

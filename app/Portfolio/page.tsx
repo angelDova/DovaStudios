@@ -6,6 +6,7 @@ import { Tab } from "@headlessui/react";
 import React, { useRef } from "react";
 import Masonry from "react-masonry-css";
 import classNames from "classnames";
+import nodeFetch from "node-fetch";
 
 import img1 from "@/public/images/1.jpg";
 import img2 from "@/public/images/2.jpg";
@@ -15,6 +16,7 @@ import img5 from "@/public/images/5.jpg";
 import PortfolioBg from "@/public/images/portfolio-bg.jpg";
 import Image from "next/image";
 
+import { createApi } from "unsplash-js";
 import type { LightGallery } from "lightgallery/lightgallery";
 import LightGalleryComponent from "lightgallery/react";
 
@@ -26,6 +28,8 @@ import "lightgallery/css/lg-thumbnail.css";
 // import plugins if you need
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
+import FlipNavWrapper from "@/components/FlipNav";
+import Link from "next/link";
 
 // const page = () => {
 //   return (
@@ -59,21 +63,18 @@ const images = [img1, img2, img3, img4, img5];
 
 const Page = () => {
   const lightboxRef = useRef<LightGallery | null>(null);
+
   return (
-    <div className="h-full overflow-auto">
-      <Image
-        src={PortfolioBg}
-        alt="background-imaget"
-        placeholder="blur"
-        className="fixed left-0 top-0 z-0"
-        priority
-      />
+    <div className="h-full float-left w-full relative bg-[#000] overflow-auto sm:px-4">
+      {/* <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div> */}
 
-      <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div>
-
-      <header className="fixed z-30 w-full flex items-center justify-center h-[90px] px-6">
-        <span className="uppercase text-2xl font-medium">Studio Portfolio</span>
+      <header className="fixed top-0 w-full z-30 flex justify-between items-center h-[90px] px-10 gap-16">
+        <LiquidSideNav />
+        <span className="uppercase text-lg font-medium">
+          Photography Portfolio
+        </span>
       </header>
+
       <main className="relative pt-[110px] z-20">
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
