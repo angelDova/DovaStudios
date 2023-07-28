@@ -43,6 +43,7 @@ const Nav: React.FC<NavProps> = ({ isOpen, setIsOpen }) => {
       >
         <FiX />
       </motion.button>
+      <h2 className="text-black">Dova Studios</h2>
       <motion.div
         variants={linkWrapperVariants}
         className="flex flex-col gap-4 absolute bottom-8 left-8"

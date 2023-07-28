@@ -13,6 +13,24 @@ import img2 from "@/public/images/2.jpg";
 import img3 from "@/public/images/3.jpg";
 import img4 from "@/public/images/4.jpg";
 import img5 from "@/public/images/5.jpg";
+import img6 from "@/public/VacayVibesPics/Arctic Airbnb.webp";
+import img7 from "@/public/VacayVibesPics/Barn Airbnb.webp";
+import img8 from "@/public/VacayVibesPics/Camping Airbnb.webp";
+import img9 from "@/public/VacayVibesPics/Castles Airbnb.webp";
+import img10 from "@/public/VacayVibesPics/Caves Airbnb.webp";
+import img11 from "@/public/VacayVibesPics/Country Airbnb.webp";
+import img12 from "@/public/VacayVibesPics/Desert Airbnb.webp";
+import img13 from "@/public/VacayVibesPics/Island Airbnb.jpeg";
+import img14 from "@/public/VacayVibesPics/Lake Airbnb.webp";
+import img15 from "@/public/VacayVibesPics/Luxury Airbnb.jpeg";
+import img16 from "@/public/VacayVibesPics/Modern Airbnb.webp";
+import img17 from "@/public/VacayVibesPics/Pool Airbnb.jpeg";
+import img18 from "@/public/VacayVibesPics/Skiing Airbnb.jpeg";
+import img19 from "@/public/VacayVibesPics/Windmill Airbnb.jpeg";
+import img20 from "@/public/VacayVibesPics/beachHouse.webp";
+import img21 from "@/public/VacayVibesPics/beachHouse2.webp";
+import img22 from "@/public/VacayVibesPics/yosemite cabin.jpeg";
+
 import PortfolioBg from "@/public/images/portfolio-bg.jpg";
 import Image from "next/image";
 
@@ -59,7 +77,36 @@ const tabs = [
   },
 ];
 
-const images = [img1, img2, img3, img4, img5];
+const images = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+];
+
+const breakpointColumnsObj = {
+  default: 4,
+  1100: 3,
+  700: 2,
+};
 
 const Page = () => {
   const lightboxRef = useRef<LightGallery | null>(null);
@@ -97,7 +144,7 @@ const Page = () => {
             <Tab.Panels className="h-full bg-opacity-80 max-w-[900px] w-full p-2 sm:p-4 text-indigo-600 font-medium my-6 ">
               <Tab.Panel className="">
                 <Masonry
-                  breakpointCols={2}
+                  breakpointCols={breakpointColumnsObj}
                   className="flex gap-4 "
                   columnClassName=""
                 >
