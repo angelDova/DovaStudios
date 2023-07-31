@@ -9,4 +9,10 @@
     color: white;
     scroll-behavior: smooth;
   }
+
+  @layer base {
+    body {
+      @apply text-[#1f2937] tracking-wide;
+    }
+  }
 }

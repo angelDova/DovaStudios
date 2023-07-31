@@ -1,3 +1,5 @@
+"use client";
+
 import { Tab } from "@headlessui/react";
 import classNames from "classnames";
 import Image from "next/image";
@@ -37,6 +39,9 @@ import img20 from "@/public/VacayVibesPics/beachHouse.webp";
 import img21 from "@/public/VacayVibesPics/beachHouse2.webp";
 import img22 from "@/public/VacayVibesPics/yosemite cabin.jpeg";
 import { useRef } from "react";
+import Link from "next/link";
+import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import { Button } from "../ui/button";
 
 const tabs = [
   {

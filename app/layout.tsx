@@ -1,10 +1,10 @@
 import FlipNavWrapper from "@/components/FlipNav";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Permanent_Marker } from "next/font/google";
+import { Nunito } from "next/font/google";
 import Loading from "./loading";
 
-const marker = Permanent_Marker({ subsets: ["latin"], weight: "400" });
+const marker = Nunito({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "DovaStudios",

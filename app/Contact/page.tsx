@@ -1,22 +1,95 @@
 "use client";
 
-import ShiftingContactForm from "@/components/ShiftingContactForm";
-import React from "react";
 import Image from "next/image";
-import LiquidSideNav from "@/components/LiquidSideNav";
+import Link from "next/link";
+import React, { useState } from "react";
+import { AiOutlineMail } from "react-icons/ai";
+import { BsFillPersonLinesFill } from "react-icons/bs";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import ContactImg from "@/public/images/portfolio-bg.jpg";
+import ShiftingContactForm from "@/components/ShiftingContactForm";
 import FlipNavWrapper from "@/components/FlipNav";
 
 const Contact = () => {
   return (
-    <div className="bg-slate-100 items-center justify-center h-screen">
+    <>
       <FlipNavWrapper />
-      <span className="text-black flex items-center justify-center text-4xl sm:p4 pt-10">
-        Get In Touch
-      </span>
-      <div className="pt-28">
-        <ShiftingContactForm />
+      <div id="contact" className="w-full lg:h-screen">
+        <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
+          <p className="text-6xl tracking-widest uppercase text-[#5651e5]">
+            Contact
+          </p>
+          <h2 className="py-4">Get In Touch</h2>
+          <div className="grid lg:grid-cols-5 gap-8">
+            {/* left */}
+            <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
+              <div className="lg:p-4 h-full ">
+                <div>
+                  <Image
+                    className="rounded-xl hover:scale-105 ease-in duration-300"
+                    src={ContactImg}
+                    alt="/"
+                  />
+                </div>
+                <div>
+                  <h2 className="py-2">Ariana Cordova</h2>
+                  <p>Creative Director | Stylist | Set Designer</p>
+                  <p className="py-4">
+                    I am available for freelance or part-time positions. Contact
+                    me and let&apos;s talk.
+                  </p>
+                </div>
+                <div>
+                  <p className="uppercase pt-8">Connect With Me</p>
+                  <div className="flex items-center justify-between py-4">
+                    <a
+                      href="https://www.linkedin.com/in/clint-briley-50056920a/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                        <FaLinkedinIn />
+                      </div>
+                    </a>
+                    <a
+                      href="https://github.com/fireclint"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                        <FaGithub />
+                      </div>
+                    </a>
+
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <AiOutlineMail />
+                    </div>
+                    <Link href="/resume">
+                      <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                        <BsFillPersonLinesFill />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* right */}
+            <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
+              <div className="p-4">
+                <ShiftingContactForm />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center py-12">
+            <Link href="/Contact">
+              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
+            </Link>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
