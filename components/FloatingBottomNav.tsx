@@ -10,13 +10,13 @@ const FloatingBottomNav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="h-[400px] bg-white relative">
+    <div className="h-[100px] bg-transparent relative">
       <motion.nav
         animate={open ? "open" : "closed"}
         initial="closed"
-        className="bg-white text-black shadow-lg flex items-center justify-between absolute bottom-8 left-[50%] -translate-x-[50%]"
+        className="bg-transparent text-black flex items-center justify-between absolute bottom-8 left-[35%] -translate-x-[50%]"
       >
-        <MenuButton setOpen={setOpen} open={open} />
+        {/* <MenuButton setOpen={setOpen} open={open} /> */}
         <div className="flex gap-6 px-1">
           <Link text="Home" Icon={FiHome} href="/" />
           <Link

@@ -12,7 +12,7 @@
 
   @layer base {
     body {
-      @apply text-[#1f2937] tracking-wide;
+      @apply text-[#1f2937] tracking-wide bg-[#eff2ed];
     }
   }
 }

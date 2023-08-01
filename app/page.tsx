@@ -231,6 +231,7 @@
 import ModernCarousel from "@/components/Carousel";
 import FlipNavWrapper from "@/components/FlipNav";
 import FloatingBottomNav from "@/components/FloatingBottomNav";
+import GradientButton from "@/components/GradientShadowButton";
 import { Button } from "@/components/ui/button";
 import Modal from "@/components/ui/modal";
 
@@ -250,10 +251,11 @@ const ShuffleHero = () => {
   return (
     <>
       <FlipNavWrapper />
-      <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8 text-black">
+      {/* <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8 text-black">
         DovaStudios
-      </h1>
-      <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 max-w-6xl mx-auto">
+      </h1> */}
+
+      <section className="w-full px-8 py-4 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 max-w-6xl mx-auto">
         <div>
           <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
             Ariana Cordova
@@ -269,25 +271,15 @@ const ShuffleHero = () => {
           Contact
         </button> */}
 
-          <button
-            onClick={handleButtonClick}
-            className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
-          >
-            Contact
-          </button>
+          <GradientButton
+          // onClick={handleButtonClick}
+          // className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
+          />
         </div>
         <ModernCarousel />
-        <FloatingBottomNav />
-        {/* <Button onClick={() => setIsOpen(true)}>Hi</Button>
-        <Modal
-          onClick={() => setIsOpen(true)}
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-        >
-          Pictures
-        </Modal> */}
-        {/* <Button >Open Modal</Button> */}
-        {/* <ShuffleGrid /> */}
+        <div className="flex items-center justify-center">
+          <FloatingBottomNav />
+        </div>
       </section>
     </>
   );

@@ -10,6 +10,7 @@ import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "@/public/images/portfolio-bg.jpg";
 import ShiftingContactForm from "@/components/ShiftingContactForm";
 import FlipNavWrapper from "@/components/FlipNav";
+import FloatingBottomNav from "@/components/FloatingBottomNav";
 
 const Contact = () => {
   return (
@@ -42,7 +43,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="uppercase pt-8">Connect With Me</p>
-                  <div className="flex items-center justify-between py-4">
+                  <FloatingBottomNav />
+                  {/* <div className="flex items-center justify-between py-4">
                     <a
                       href="https://www.linkedin.com/in/clint-briley-50056920a/"
                       target="_blank"
@@ -70,7 +72,7 @@ const Contact = () => {
                         <BsFillPersonLinesFill />
                       </div>
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

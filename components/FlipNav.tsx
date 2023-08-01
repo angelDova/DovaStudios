@@ -65,7 +65,8 @@ const NavLeft: React.FC<NavLeftProps> = ({ setIsOpen }) => {
       >
         <FiMenu />
       </motion.button>
-      <Logo />
+      {/* <Logo /> */}
+      <h2 className="text-4xl ml-2 uppercase text-white">DovaStudios</h2>
       <NavLink text="Home" href="/" />
       <NavLink text="Portfolio" href="/Portfolio" />
       <NavLink text="About" href="/About" />
@@ -99,7 +100,7 @@ const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
 const NavRight = () => {
   return (
     <div className="flex items-center gap-4">
-      <Button
+      {/* <Button
         variant="ghost"
         // whileHover={{ scale: 1.05 }}
         // whileTap={{ scale: 0.95 }}
@@ -114,7 +115,7 @@ const NavRight = () => {
         className="px-4 py-2 bg-black text-white font-medium rounded-md whitespace-nowrap"
       >
         Sign up
-      </Button>
+      </Button> */}
     </div>
   );
 };
