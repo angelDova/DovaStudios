@@ -1,5 +1,6 @@
 "use client";
 
+import FloatingBottomNav from "@/components/FloatingBottomNav";
 import LiquidSideNav from "@/components/LiquidSideNav";
 import { Gallery } from "@/components/gallery/gallery";
 import Link from "next/link";
@@ -16,7 +17,7 @@ const Page = () => {
   return (
     <div
       id="portfolio"
-      className="h-full float-left w-full relative bg-[#000] sm:px-4"
+      className="h-full float-left w-full relative bg-[#000] sm:px-4 overflow-auto"
     >
       <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div>
 
@@ -28,15 +29,7 @@ const Page = () => {
       </header>
       <Gallery />
       <footer className="relative h-[90px] text-2xl font-medium flex justify-center items-center z-20">
-        <Link
-          href="Portfolio"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
-        >
-          <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
-        </Link>
+        <FloatingBottomNav />
       </footer>
     </div>
   );

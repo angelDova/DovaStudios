@@ -2,14 +2,9 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import {
-  FiShoppingCart,
-  FiSearch,
-  FiPhone,
-  FiMenu,
-  FiHome,
-  FiX,
-} from "react-icons/fi";
+import { FiMenu, FiHome, FiX, FiInstagram } from "react-icons/fi";
+import { BsTiktok } from "react-icons/bs";
+import { FaPinterestP } from "react-icons/fa";
 
 const FloatingBottomNav = () => {
   const [open, setOpen] = useState(false);
@@ -22,11 +17,23 @@ const FloatingBottomNav = () => {
         className="bg-white text-black shadow-lg flex items-center justify-between absolute bottom-8 left-[50%] -translate-x-[50%]"
       >
         <MenuButton setOpen={setOpen} open={open} />
-        <div className="flex gap-6 px-6">
-          <Link text="Home" Icon={FiHome} />
-          <Link text="Shop" Icon={FiSearch} />
-          <Link text="Support" Icon={FiPhone} />
-          <Link text="Cart" Icon={FiShoppingCart} />
+        <div className="flex gap-6 px-1">
+          <Link text="Home" Icon={FiHome} href="/" />
+          <Link
+            text="Instagram"
+            Icon={FiInstagram}
+            href="https://www.instagram.com/angeldova_/"
+          />
+          <Link
+            text="TikTok"
+            Icon={BsTiktok}
+            href="https://www.tiktok.com/en/"
+          />
+          <Link
+            text="Pinterest"
+            Icon={FaPinterestP}
+            href="https://www.pinterest.com/"
+          />
         </div>
         <Menu />
       </motion.nav>
@@ -37,12 +44,13 @@ const FloatingBottomNav = () => {
 interface LinkProps {
   text: string;
   Icon: any;
+  href: string;
 }
 
-const Link: React.FC<LinkProps> = ({ text, Icon }) => {
+const Link: React.FC<LinkProps> = ({ text, Icon, href }) => {
   return (
     <a
-      href="#"
+      href={href}
       rel="nofollow"
       className="text-sm w-12 hover:text-indigo-500 transition-colors flex flex-col gap-1 items-center"
     >

@@ -230,6 +230,7 @@
 
 import ModernCarousel from "@/components/Carousel";
 import FlipNavWrapper from "@/components/FlipNav";
+import FloatingBottomNav from "@/components/FloatingBottomNav";
 import { Button } from "@/components/ui/button";
 import Modal from "@/components/ui/modal";
 
@@ -255,7 +256,7 @@ const ShuffleHero = () => {
       <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 max-w-6xl mx-auto">
         <div>
           <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
-            by: Ariana Cordova
+            Ariana Cordova
           </span>
           <h3 className="text-black text-4xl md:text-6xl font-semibold">
             Creative Director | Stylist | Set Designer
@@ -276,6 +277,7 @@ const ShuffleHero = () => {
           </button>
         </div>
         <ModernCarousel />
+        <FloatingBottomNav />
         {/* <Button onClick={() => setIsOpen(true)}>Hi</Button>
         <Modal
           onClick={() => setIsOpen(true)}
