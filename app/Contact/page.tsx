@@ -34,15 +34,19 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <h2 className="py-2">Ariana Cordova</h2>
-                  <p>Creative Director | Stylist | Set Designer</p>
-                  <p className="py-4">
+                  <h2 className="py-2 text-gray-600">Ariana Cordova</h2>
+                  <p className="text-gray-600">
+                    Creative Director | Stylist | Set Designer
+                  </p>
+                  <p className="py-4 text-gray-600">
                     I am available for freelance or part-time positions. Contact
                     me and let&apos;s talk.
                   </p>
                 </div>
                 <div>
-                  <p className="uppercase pt-8">Connect With Me</p>
+                  <p className="uppercase pt-8 text-gray-600">
+                    Connect With Me
+                  </p>
                   <FloatingBottomNav />
                   {/* <div className="flex items-center justify-between py-4">
                     <a
