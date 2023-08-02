@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
 import { Button } from "./ui/button";
+import { ModeToggle } from "./mode-toggle";
 
 const FlipNavWrapper = () => {
   return (
@@ -65,8 +66,8 @@ const NavLeft: React.FC<NavLeftProps> = ({ setIsOpen }) => {
       >
         <FiMenu />
       </motion.button>
-      {/* <Logo /> */}
-      <h2 className="text-4xl ml-2 uppercase text-white">DovaStudios</h2>
+      <Logo />
+      {/* <h2 className="text-4xl ml-2 uppercase text-white">DovaStudios</h2> */}
       <NavLink text="Home" href="/" />
       <NavLink text="Portfolio" href="/Portfolio" />
       <NavLink text="About" href="/About" />
@@ -100,6 +101,7 @@ const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
 const NavRight = () => {
   return (
     <div className="flex items-center gap-4">
+      <ModeToggle />
       {/* <Button
         variant="ghost"
         // whileHover={{ scale: 1.05 }}

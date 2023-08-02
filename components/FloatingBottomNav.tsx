@@ -14,7 +14,7 @@ const FloatingBottomNav = () => {
       <motion.nav
         animate={open ? "open" : "closed"}
         initial="closed"
-        className="bg-transparent text-black flex items-center justify-between absolute bottom-8 left-[35%] -translate-x-[50%]"
+        className="bg-transparent text-black dark:text-indigo-500 flex items-center justify-between absolute bottom-8 left-[35%] -translate-x-[50%]"
       >
         {/* <MenuButton setOpen={setOpen} open={open} /> */}
         <div className="flex gap-6 px-1">

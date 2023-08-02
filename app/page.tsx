@@ -251,19 +251,19 @@ const ShuffleHero = () => {
   return (
     <>
       <FlipNavWrapper />
-      {/* <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8 text-black">
+      <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8 text-black dark:text-white">
         DovaStudios
-      </h1> */}
+      </h1>
 
       <section className="w-full px-8 py-4 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 max-w-6xl mx-auto">
         <div>
-          <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
+          <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium ">
             Ariana Cordova
           </span>
-          <h3 className="text-black text-4xl md:text-6xl font-semibold">
+          <h3 className="text-black dark:text-white text-4xl md:text-6xl font-semibold">
             Creative Director | Stylist | Set Designer
           </h3>
-          <p className="text-base md:text-lg text-black my-4 md:my-6">
+          <p className="text-base md:text-lg text-black my-4 md:my-6 dark:text-white">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis
             in error repellat voluptatibus ad.
           </p>
