@@ -241,6 +241,10 @@ import { useRouter } from "next/navigation";
 
 import { Key, useEffect, useRef, useState } from "react";
 
+export async function wait(ms: any) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 const ShuffleHero = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
@@ -375,10 +379,6 @@ const squareData = [
     src: "/images/4.jpg",
   },
 ];
-
-export async function wait(ms: any) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 const generateSquares = () => {
   return shuffle(squareData).map(
