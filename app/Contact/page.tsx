@@ -8,9 +8,9 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import ContactImg from "@/public/images/portfolio-bg.jpg";
-import ShiftingContactForm from "@/components/ShiftingContactForm";
-import FlipNavWrapper from "@/components/FlipNav";
-import FloatingBottomNav from "@/components/FloatingBottomNav";
+import ShiftingContactForm from "@/app/components/ShiftingContactForm";
+import FlipNavWrapper from "@/app/components/FlipNav";
+import FloatingBottomNav from "@/app/components/FloatingBottomNav";
 
 const Contact = () => {
   return (

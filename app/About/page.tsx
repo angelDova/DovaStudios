@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AboutImg from "@/public/images/AboutImg.jpg";
-import FlipNavWrapper from "@/components/FlipNav";
+import FlipNavWrapper from "@/app/components/FlipNav";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 const About = () => {

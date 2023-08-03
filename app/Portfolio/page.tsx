@@ -1,8 +1,8 @@
 "use client";
 
 // import FloatingBottomNav from "@/components/FloatingBottomNav";
-import LiquidSideNav from "@/components/LiquidSideNav";
-import { Gallery } from "@/components/gallery/gallery";
+import LiquidSideNav from "@/app/components/LiquidSideNav";
+import { Gallery } from "@/app/components/gallery/gallery";
 
 import { useState } from "react";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";

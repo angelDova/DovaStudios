@@ -1,9 +1,9 @@
-import FlipNavWrapper from "@/components/FlipNav";
+import FlipNavWrapper from "@/app/components/FlipNav";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import Loading from "./loading";
-import { ThemeProvider } from "@/components/theme-provider";
+
+import { ThemeProvider } from "@/app/components/theme-provider";
 
 const marker = Nunito({ subsets: ["latin"], weight: "400" });
 

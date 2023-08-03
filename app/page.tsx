@@ -228,12 +228,13 @@
 
 "use client";
 
-import ModernCarousel from "@/components/Carousel";
-import FlipNavWrapper from "@/components/FlipNav";
-import FloatingBottomNav from "@/components/FloatingBottomNav";
-import GradientButton from "@/components/GradientShadowButton";
-import { Button } from "@/components/ui/button";
-import Modal from "@/components/ui/modal";
+import ModernCarousel from "@/app/components/Carousel";
+import FlipNavWrapper from "@/app/components/FlipNav";
+import FloatingBottomNav from "@/app/components/FloatingBottomNav";
+import GradientButton from "@/app/components/GradientShadowButton";
+
+import { Button } from "@/app/components/ui/button";
+import Modal from "@/app/components/ui/modal";
 
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -244,9 +245,15 @@ const ShuffleHero = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
 
-  const handleButtonClick = () => {
-    router.push("/Contact");
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      await wait(500);
+      // Perform any data fetching or asynchronous tasks here if needed
+      // Example: const data = await fetchDataFromAPI();
+      setIsOpen(true);
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -369,6 +376,10 @@ const squareData = [
   },
 ];
 
+export async function wait(ms: any) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 const generateSquares = () => {
   return shuffle(squareData).map(
     (sq: { id: Key | null | undefined; src: any }) => (
@@ -386,27 +397,27 @@ const generateSquares = () => {
   );
 };
 
-const ShuffleGrid = () => {
-  const timeoutRef = useRef<number | undefined>(undefined); // Initialize as undefined
-  const [squares, setSquares] = useState<any[]>(generateSquares()); // Assuming 'generateSquares' returns an array of any type
+// const ShuffleGrid = () => {
+//   const timeoutRef = useRef<number | undefined>(undefined); // Initialize as undefined
+//   const [squares, setSquares] = useState<any[]>(generateSquares()); // Assuming 'generateSquares' returns an array of any type
 
-  useEffect(() => {
-    shuffleSquares();
+//   useEffect(() => {
+//     shuffleSquares();
 
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
+//     return () => clearTimeout(timeoutRef.current);
+//   }, []);
 
-  const shuffleSquares = () => {
-    setSquares(generateSquares());
+//   const shuffleSquares = () => {
+//     setSquares(generateSquares());
 
-    timeoutRef.current = setTimeout(shuffleSquares, 7500) as any;
-  };
+//     timeoutRef.current = setTimeout(shuffleSquares, 7500) as any;
+//   };
 
-  return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
-      {squares.map((sq: any) => sq)}
-    </div>
-  );
-};
+//   return (
+//     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+//       {squares.map((sq: any) => sq)}
+//     </div>
+//   );
+// };
 
 export default ShuffleHero;
