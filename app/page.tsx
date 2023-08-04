@@ -249,16 +249,6 @@ const ShuffleHero = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await wait(500);
-      // Perform any data fetching or asynchronous tasks here if needed
-      // Example: const data = await fetchDataFromAPI();
-      setIsOpen(true);
-    };
-    fetchData();
-  }, []);
-
   return (
     <>
       <FlipNavWrapper />
