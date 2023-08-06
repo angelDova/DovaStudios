@@ -7,7 +7,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
-import ContactImg from "@/public/images/portfolio-bg.jpg";
+import ContactImg from "@/public/images/contact.jpg";
 import ShiftingContactForm from "@/app/components/ShiftingContactForm";
 import FlipNavWrapper from "@/app/components/FlipNav";
 import FloatingBottomNav from "@/app/components/FloatingBottomNav";
