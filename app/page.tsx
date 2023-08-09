@@ -33,10 +33,7 @@ const ShuffleHero = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis
             in error repellat voluptatibus ad.
           </p>
-          <p className="text-base md:text-lg text-black my-4 md:my-6 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis
-            in error repellat voluptatibus ad.
-          </p>
+
           {/* <button className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap">
           Contact
         </button> */}
