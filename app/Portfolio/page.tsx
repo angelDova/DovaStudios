@@ -79,16 +79,13 @@ const Page = () => {
   return (
     <div
       id="portfolio"
-      className="h-full float-left w-full relative bg-[#000] sm:px-4 overflow-auto"
+      className="h-full float-left w-full relative sm:px-4 overflow-auto py-12"
     >
       <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div>
 
       <header className="fixed top-0 w-full z-30 flex justify-between items-center h-[90px] px-10 gap-16">
         <GlassNav />
-        {/* <LiquidSideNav />
-        <span className="flex uppercase text-lg font-medium text-[#5651e5]">
-          Studio Portfolio
-        </span> */}
+        {/* <LiquidSideNav /> */}
       </header>
       <Gallery />
       <footer className="relative h-[90px] text-2xl font-medium flex justify-center items-center z-20">

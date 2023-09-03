@@ -2,16 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AboutImg from "@/public/images/AboutImg.jpg";
-import FlipNavWrapper from "@/app/components/FlipNav";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 
 const About = () => {
   return (
     <>
-      <FlipNavWrapper />
       <div
         id="about"
-        className="w-full md:h-screen p-2 flex items-center py-16"
+        className="w-full md:h-screen p-2 flex items-center py-24"
       >
         <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
           <div className="col-span-2">

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
 import { ThemeProvider } from "@/app/components/theme-provider";
+import GlassNav from "./components/GlassNav";
 
 const marker = Nunito({ subsets: ["latin"], weight: "400" });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={marker.className}>
         {/* <FlipNavWrapper /> */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <GlassNav />
           {children}
         </ThemeProvider>
       </body>

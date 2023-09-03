@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 import { Key, useState } from "react";
+import GlassNav from "./components/GlassNav";
 
 const ShuffleHero = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,7 +18,8 @@ const ShuffleHero = () => {
 
   return (
     <>
-      <FlipNavWrapper />
+      {/* <FlipNavWrapper /> */}
+      <GlassNav />
       <h1 className="flex w-full items-center justify-center sm:text-6xl text-5xl uppercase font-bold mx-auto sm:p-12 p-8 text-black dark:text-white">
         DovaStudios
       </h1>

@@ -1,6 +1,9 @@
+"use client";
+
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useAnimate, motion, AnimationScope } from "framer-motion";
 import { FiMenu, FiArrowUpRight } from "react-icons/fi";
+import { ModeToggle } from "./mode-toggle";
 
 const GlassNav = () => {
   return (
@@ -126,9 +129,9 @@ const GlassLink = ({ text, href }: { text: string; href: any }) => {
   );
 };
 
-const TextLink = ({ text }: { text: string }) => {
+const TextLink = ({ text, href }: { text: string; href: any }) => {
   return (
-    <a href="#" className="text-white/90 transition-colors hover:text-white">
+    <a href={href} className="text-white/90 transition-colors hover:text-white">
       {text}
     </a>
   );
@@ -141,10 +144,10 @@ const Buttons = ({
 }) => (
   <div className="flex items-center gap-4">
     <div className="hidden md:block">
-      <SignInButton />
+      <ModeToggle />
     </div>
 
-    <button className="relative scale-100 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-600 from-40% to-indigo-400 px-4 py-2 font-medium text-white transition-transform hover:scale-105 active:scale-95">
+    <button className="relative scale-100 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-600 from-40% to-indigo-400 px-4 py-2 font-medium text-white transition-transform hover:scale-105 active:scale-95 hidden">
       Try free
     </button>
 
@@ -179,12 +182,12 @@ const MobileMenu = ({ menuOpen }: { menuOpen: boolean }) => {
     >
       <div className="flex items-center justify-between px-4 pb-4">
         <div className="flex items-center gap-4">
-          <TextLink text="Home" />
-          <TextLink text="Portfolio" />
-          <TextLink text="About" />
-          <TextLink text="Contact" />
+          <TextLink text="Home" href="/" />
+          <TextLink text="Portfolio" href="/Portfolio" />
+          <TextLink text="About" href="/About" />
+          <TextLink text="Contact" href="/Contact" />
         </div>
-        <SignInButton />
+        <ModeToggle />
       </div>
     </motion.div>
   );

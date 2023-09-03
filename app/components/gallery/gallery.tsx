@@ -93,11 +93,12 @@ export function Gallery() {
   const lightboxRef = useRef<LightGallery | null>(null);
   return (
     <main className="relative pt-[110px] z-20">
-      <div className="flex flex-col items-center h-full">
+      <div className="flex flex-col items-center h-full uppercase text-6xl text-center font-medium text-indigo-600">
+        Studio Portfolio
         <Tab.Group>
           <Tab.List className="flex items-center gap-12">
             {tabs.map((tab) => (
-              <Tab key={tab.key} className="p-2">
+              <Tab key={tab.key} className="p-2 pt-10">
                 {({ selected }) => (
                   <span
                     className={classNames(
