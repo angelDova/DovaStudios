@@ -12,6 +12,7 @@ import { FiMenu, FiHome, FiX, FiInstagram } from "react-icons/fi";
 import { BsTiktok } from "react-icons/bs";
 import { FaPinterestP } from "react-icons/fa";
 import { Menu } from "@headlessui/react";
+import GlassNav from "../components/GlassNav";
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -83,10 +84,11 @@ const Page = () => {
       <div className="fixed left-0 top-0 w-full h-full z-10 from-stone-900 bg-gradient-to-t"></div>
 
       <header className="fixed top-0 w-full z-30 flex justify-between items-center h-[90px] px-10 gap-16">
-        <LiquidSideNav />
+        <GlassNav />
+        {/* <LiquidSideNav />
         <span className="flex uppercase text-lg font-medium text-[#5651e5]">
           Studio Portfolio
-        </span>
+        </span> */}
       </header>
       <Gallery />
       <footer className="relative h-[90px] text-2xl font-medium flex justify-center items-center z-20">

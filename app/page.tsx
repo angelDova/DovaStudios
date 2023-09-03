@@ -4,6 +4,7 @@ import ModernCarousel from "@/app/components/Carousel";
 import FlipNavWrapper from "@/app/components/FlipNav";
 import FloatingBottomNav from "@/app/components/FloatingBottomNav";
 import GradientButton from "@/app/components/GradientShadowButton";
+import PaintButton from "@/app/components/WetPaintButton";
 
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -37,11 +38,13 @@ const ShuffleHero = () => {
           {/* <button className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap">
           Contact
         </button> */}
-
-          <GradientButton
-          // onClick={handleButtonClick}
-          // className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
-          />
+          <div className="flex items-center justify-between">
+            <GradientButton
+            // onClick={handleButtonClick}
+            // className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
+            />
+            <PaintButton />
+          </div>
         </div>
         <ModernCarousel />
         <div className="flex items-center justify-center">
