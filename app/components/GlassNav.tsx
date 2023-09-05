@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useAnimate, motion, AnimationScope } from "framer-motion";
 import { FiMenu, FiArrowUpRight } from "react-icons/fi";
 import { ModeToggle } from "./mode-toggle";
+import { Button } from "./ui/button";
 
 const GlassNav = () => {
   return (
